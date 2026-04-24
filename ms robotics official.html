@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS Robotics Official</title>
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: black;
+color: white;
+}
+
+/* NAVBAR */
+nav {
+position: fixed;
+top: 0;
+width: 100%;
+background: rgba(0,0,0,0.6);
+backdrop-filter: blur(8px);
+padding: 12px;
+text-align: center;
+z-index: 1000;
+border-bottom: 1px solid cyan;
+}
+
+nav a {
+color: cyan;
+margin: 0 15px;
+text-decoration: none;
+font-size: 18px;
+text-shadow: 0 0 5px cyan, 0 0 10px cyan;transition: 0.3s;
+}
+
+nav a:hover {
+color: white;
+text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 40px cyan;
+}
+
+/* MOBILE NAV */
+.menu-toggle {
+display: none;
+font-size: 24px;
+color: cyan;
+cursor: pointer;
+}
+
+.nav-links {
+display: inline-block;
+}
+
+/* SECTIONS */
+section {
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+padding: 20px;
+position: relative;
+}
+
+section::before {
+content: "";
+position: absolute;
+inset: 0;
+background: rgba(0,0,0,0.6);
+}
+
+section * { position: relative; }
+
+/* BACKGROUNDS */
+#home {
+background: url('file:///C:/Users/USER/Downloads/home.jpg') no-repeat center/cover;
+}
+
+#about {
+background: url('file:///C:/Users/USER/Downloads/about.jpg') no-repeat center/cover;
+}
+
+#contact {
+background: url('file:///C:/Users/USER/Downloads/contact.jpg') no-repeat center/cover;
+}
+
+#welcome {
+background: url('file:///C:/Users/USER/Downloads/welcome.jpg') no-repeat center/cover;
+}
+
+/* HEADINGS */
+h1 {
+font-size: 200px;
+color: cyan;
+text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 40px cyan;
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+from { text-shadow: 0 0 10px cyan, 0 0 20px cyan; }
+to { text-shadow: 0 0 20px cyan, 0 0 40px cyan, 0 0 60px cyan; }
+}
+
+p {
+font-size: 20px;
+max-width: 600px;
+color: #ddd;
+}
+
+/* BUTTON */
+button {
+padding: 15px 30px;
+font-size: 18px;
+margin: 10px;
+cursor: pointer;
+border: 2px solid cyan;
+background: transparent;
+color: cyan;
+text-shadow: 0 0 5px cyan;
+box-shadow: 0 0 10px cyan;
+transition: 0.3s;
+}
+
+button:hover {
+background: cyan;
+color: black;
+box-shadow: 0 0 20px cyan, 0 0 40px cyan;
+transform: scale(1.1);
+}
+
+/* SCROLL ANIMATION */
+.fade-in {
+opacity: 0;
+transform: translateY(40px);
+transition: all 1s ease;
+}
+
+.fade-in.show {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* GRID EFFECT */
+body::after {
+content: "";
+position: fixed;
+inset: 0;
+background-image: linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0,255,255,0.05) 1px, transparent 1px);
+background-size: 40px 40px;
+pointer-events: none;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+h1 { font-size: 32px; }
+p { font-size: 16px; }
+button { font-size: 14px; padding: 10px 20px; }
+
+.menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,0,0.9);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50px;
+}
+
+.nav-links a {
+    display: block;
+    padding: 10px;
+}
+
+.nav-links.active {
+    display: flex;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<span class="menu-toggle" onclick="toggleMenu()">☰</span>
+<div class="nav-links" id="navLinks">
+    <a href="#welcome">Home</a>
+    <a href="#home">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section id="welcome" class="fade-in">
+<h1>MS ROBOTICS</h1>
+<p><i><h2>MS ROBOTICS
+Building the future of Robotics, Software, and AI.
+
+We are at the beginning of a long journey — creating intelligent systems designed to solve real-world problems.
+
+Today we are learning, building, and experimenting.
+Tomorrow, we aim to launch solutions that can change industries.
+
+This is just the start.</h2></i></p>
+<a href="#home"><button>Explore</button></a>
+</section>
+
+<section id="home" class="fade-in">
+<h1>Our Services</h1>
+<p><h2>What We Aim to Build
+
+MS Robotics is focused on developing future-ready technologies, including:
+
+• Smart Robotics Systems
+• AI-powered tools for real-world problem solving
+• Automation software for efficiency and productivity
+• Intelligent applications that simplify complex tasks
+
+These solutions are currently in development as we build skills, ideas, and prototypes for the future.</h2></p>
+</section>
+
+<section id="about" class="fade-in">
+<h1>About Us</h1>
+<p><h2>About MS Robotics
+
+MS Robotics is an early-stage initiative driven by curiosity, learning, and innovation.
+
+Our goal is to design and develop advanced technologies in robotics, artificial intelligence, and software engineering.
+
+We are currently in the foundation phase — exploring ideas, building knowledge, and preparing for long-term growth.
+
+The official launch is planned in the future, with a vision to create impactful solutions that address real-world challenges.</h2></p>
+</section>
+
+<section id="contact" class="fade-in">
+<h1>Contact Us</h1>
+<p><h2>Contact Us
+
+We are currently in the early development stage.
+
+<P><h2>For inquiries, ideas, or collaboration in the future:</h2></p>
+<P><h2>Chinmay Kumar Jena - msrobotics1234567890@gmail.com  :  +91 7788945079</h2></p>
+<p><h2> Kumar Abhisek - 0u0012.mpsbls@gmail.com : 9853816123</h2></p>
+</section>
+
+<script>
+function toggleMenu() {
+document.getElementById('navLinks').classList.toggle('active');
+}
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+    if (entry.isIntersecting) {
+    entry.target.classList.add('show');
+    }
+});
+});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
